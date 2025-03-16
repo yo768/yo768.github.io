@@ -1,44 +1,236 @@
+
 <!DOCTYPE html>
-<html>
+<html lang="es">
+
 <head>
-	<meta charset="UTF-8">
-	<title>Mi Primera Página Web</title>
-	<style>
-        body {
-            background-color: #a2ff00;
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mi Página Web</title>
+    <style>
+        .menu {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            background-color: blue;
+            overflow: hidden;
+            display: flex;
+            justify-content: center;
         }
-        h1 {
-            display: Fraktur;
-            
+
+        .menu li {
+            float: left;
+        }
+
+        .menu li a {
+            display: block;
+            color: white;
+            padding: 14px 20px;
+            text-decoration: none;
+        }
+
+        .menu li a:hover {
+            background-color: #purple;
+        }
+
+
+        .seccion {
+            margin: 20px;
+            padding: 20px;
+        }
+
+        .contenido {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        h1,
+        h2,
+        h3 {
+            color: #333;
+        }
+
+        .tabla {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+
+        .tabla th,
+        .tabla td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+
+        .tabla th {
+            background-color: #f2f2f2;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+        }
+
+        video {
+            max-width: 100%;
         }
     </style>
 </head>
+
 <body>
-	<header>
-    	<h1>bienvenidos a mi primer pagina web:Tadeo Hernandez</h1>
-	</header>
-	<nav></nav>
-    	<ul>
-        	<li><a href="#inicio">Inicio</a></li>
-        	<li><a href="#acerca">Acerca de</a></li>
-        	<li><a href="https://www.canva.com/design/DAGUbdV-PeY/7BChSyfkbnTofcB9iqv0_Q/view">MAPA Mental</a></li>
-    	</ul>
-	</nav>
-	<section id="inicio">
-    	<h2>Inicio</h2>
-    	<p>me gustan los videojuegos y salir a correr o caminar cuando no hay sol (noche o mañana )me gusta la quimica, y practicar de vez en cuando el Kendo </p>
-    <figure>
-    <img src="data:image/jpeg;base64,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" width="400" height="" alt="Descripción de la imagen">
-    <figcaption>no renuncies a tus sueños. sigue durmiendo</figcaption>
-</figure>
-<li>Me gusta el kendo 
-<li>Me gustan los videojuegos
-<li>Soy relativamente bueno en quimica
-    	</section>
-	<footer>
-    <p>  ..   /\_/\ </p>
-    <p>    .  (OᴗO) </p> 
-    <p></p>( づ♡⌒づ)</p>
-	</footer>
+
+    <ul class="menu">
+        <li><a href="#inicio">Inicio</a></li>
+        <li><a href="#acerca">Acerca de</a></li>
+        <li><a href="#servicios">Servicios</a></li>
+        <li><a href="#museo">Museo Virtual</a></li>
+    </ul>
+
+
+    <div class="seccion" id="inicio">
+        <h1>Bienvenidos a Mi Página Web</h1>
+        <h2>Explora nuestra colección y servicios</h2>
+        <p>Esta página está dedicada a ofrecer información relevante sobre nuestro museo virtual, nuestros servicios y proyectos. Navega por las secciones para descubrir más.</p>
+    </div>
+
+
+    <div class="seccion" id="acerca">
+        <h2>Acerca de el museo</h2>
+        <p> Es un museo virtual en el cual se exponen obras de distintos creadores  </p>
+    </div>
+
+
+    <div class="seccion" id="servicios">
+        <h2>¿Que ofrese el museo virtual?</h2>
+        <ul>
+            <li>imagenes de diversas figuras </li>
+            </li>
+            <li>diseños unicos</li>
+            <li>Un vedeo de como crear tus diseños</li>
+        </ul>
+    </div>
+
+
+    <div class="seccion" id="museo">
+        <h2>Las más recientes obras de nuestros creadores</h2>
+
+        <img src="https://github.com/yo768/yo768.github.io/blob/main/primer%20imagen.png?raw=true" alt="unana red e araña con corazon">
+        <p> Autor desconosido:unana red de araña con corazon</p>/>
+        <img src="https://github.com/yo768/yo768.github.io/blob/main/segunda%20imagen.png?raw=true" alt="un gato de figuras geometricas">
+        <p>Creado por gerardo Hdz. :un gato de figuras geometricas</p>
+        <img src="https://github.com/yo768/yo768.github.io/blob/main/tercer%20imagen.png?raw=true" alt="se supone es un oso creado a base de puras lineas rectas">
+        <p>Creado por Tadeo hdz.  :se supone es un oso creado a base de puras lineas rectas</p>
+        <img src="https://github.com/yo768/yo768.github.io/blob/main/quinta%20imagen.png?raw=true" alt="una dique tasa de cafe">
+        <p>creado por Fofo marquez:una dique tasa de cafe</p>
+        <img src="https://github.com/yo768/yo768.github.io/blob/main/cuarta%20imagen.jpg?raw=true" alt="un tren con una nube detras de la cual sale un rallo y hay un rehilete en la parte superior" title="Museo Virtual">
+        <p>Creado por Manuel R.M. : un tren con una nube detras de la cual sale un rallo y hay un rehilete en la parte superior</p>
+        
+    <h2>En este pequeño apartado aprenderas a usar de forma basica Inkscape para poder crear tus propios diseños</h2>
+      
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/TKpchk09Rqg?si=BqasPp6phAaOEbJI" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>chale no se cargo :(</iframe>
+    </div>
+
+
+ <html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tabla Colorida</title>
+    <style>
+        
+        table.tabla {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+
+        
+        table.tabla thead {
+            background-color: #4CAF50; 
+            color: purple;
+            text-align: left;
+        }
+
+       
+        table.tabla th {
+            padding: 12px;
+            border: 1px solide #ddd;
+        }
+
+        /* Estilo para las filas de la tabla */
+        table.tabla tbody tr {
+            background-color: #f2f2f2; 
+        }
+
+        table.tabla tbody tr:nth-child(even) {
+            background-color: #e0f7fa; 
+        }
+
+        table.tabla tbody tr:hover {
+            background-color: #ffeb3b; 
+        }
+
+        
+        table.tabla td {
+            padding: 10px;
+            border: 1px solid #ddd;
+            text-align: center;
+        }
+
+        
+        table.tabla td:contains('Cerrado') {
+            background-color: #C816AF;
+            color: white;
+            font-weight: bold;
+        }
+
+        
+        table.tabla {
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+    </style>
+    
+</head>
+
+    <table class="tabla">
+        <thead>
+            <tr>
+                <th>Día</th>
+                <th>Horario</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Lunes</td>
+                <td>9:00 AM - 5:00 PM</td>
+            </tr>
+            <tr>
+                <td>Martes</td>
+                <td>9:00 AM - 5:00 PM</td>
+            </tr>
+            <tr>
+                <td>Miércoles</td>
+                <td>9:00 AM - 5:00 PM</td>
+            </tr>
+            <tr>
+                <td>Jueves</td>
+                <td>9:00 AM - 5:00 PM</td>
+            </tr>
+            <tr>
+                <td>Viernes</td>
+                <td>9:00 AM - 5:00 PM</td>
+            </tr>
+            <tr>
+                <td>Sábado</td>
+                <td>10:00 AM - 4:00 PM</td>
+            </tr>
+            <tr>
+                <td>Domingo</td>
+                <td>Cerrado</td>
+            </tr>
+        </tbody>
+    </table>
+
 </body>
 </html>
