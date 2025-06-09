@@ -2,26 +2,68 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8">
-  <title>Mi Presentación</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Portafolio de Tadeo</title>
   <link rel="stylesheet" href="estilos.css">
-  <style>
-    .menu-button {
-      margin: 5px;
-      padding: 10px 20px;
-      font-size: 16px;
-      cursor: pointer;
-    }
-  </style>
 </head>
 <body>
 
-  <button class="menu-button" onclick="location.href='tadeo.html'">OTRA PÁGINA</button>
-  <button class="menu-button" onclick="location.href='Contacto.html'">FORMULARIO</button>
-  <button class="menu-button" onclick="location.href='formulario-botones.html'">BOTONES</button>
+  <nav>
+    <button onclick="mostrarSeccion('inicio')">Inicio</button>
+    <button onclick="mostrarSeccion('login')">Login</button>
+    <button onclick="mostrarSeccionProtegida('perfil')">Perfil</button>
+    <button onclick="mostrarSeccionProtegida('actividades')">Actividades PEC</button>
+    <button onclick="mostrarSeccionProtegida('museo')">Museo Virtual</button>
+    <button onclick="mostrarSeccionProtegida('video')">Clip de Video</button>
+  </nav>
 
-  <h1>Tadeo Hernández</h1>
-  <h2>Estudiante</h2>
-  <p>Soy un estudiante de bachillerato, actualmente cursando el sexto semestre. Me apasiona aprender cosas nuevas y estoy enfocado en mejorar mis habilidades para mi futuro académico y profesional.</p>
+  <section id="inicio">
+    <h1>Bienvenido al Portafolio de Tadeo</h1>
+    <p>Este sitio muestra mi perfil académico, proyectos del PEC y más contenido relacionado con mi formación.</p>
+    <img src="https://via.placeholder.com/400x200" alt="Imagen de bienvenida">
+  </section>
 
+  <section id="login" style="display:none;">
+    <h2>Iniciar Sesión</h2>
+    <input type="text" id="usuario" placeholder="Usuario"><br>
+    <input type="password" id="contrasena" placeholder="Contraseña"><br>
+    <button onclick="validarLogin()">Entrar</button>
+    <p id="mensaje-login" class="error"></p>
+  </section>
+
+  <section id="perfil" style="display:none;">
+    <h2>Perfil Personal</h2>
+    <img src="https://via.placeholder.com/150" alt="Avatar">
+    <p><strong>Nombre:</strong> Tadeo Hernández</p>
+    <p><strong>Carrera:</strong> Bachillerato</p>
+    <p><strong>Intereses:</strong> Tecnología, diseño digital, videojuegos</p>
+  </section>
+
+  <section id="actividades" style="display:none;">
+    <h2>Actividades PEC</h2>
+    <ul>
+      <li>Proyecto de robótica - 2024</li>
+      <li>Informe de Física Aplicada</li>
+      <li>Videojuego básico en Scratch</li>
+    </ul>
+  </section>
+
+  <section id="museo" style="display:none;">
+    <h2>Museo Virtual</h2>
+    <p>Explora mi galería con estilos mejorados usando CSS.</p>
+    <div class="galeria">
+      <img src="https://via.placeholder.com/200x150" alt="Obra 1">
+      <img src="https://via.placeholder.com/200x150" alt="Obra 2">
+      <img src="https://via.placeholder.com/200x150" alt="Obra 3">
+    </div>
+  </section>
+
+  <section id="video" style="display:none;">
+    <h2>Clip de Video – Diseño Digital</h2>
+    <iframe width="560" height="315" src="https://www.youtube.com/embed/VIDEO_ID" frameborder="0" allowfullscreen></iframe>
+    <p>Este video muestra mi trabajo final para la materia de Diseño Digital, donde diseñé una interfaz de usuario para una app educativa.</p>
+  </section>
+
+  <script src="script.js"></script>
 </body>
 </html>
