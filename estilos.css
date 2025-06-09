@@ -2,9 +2,9 @@ body {
   margin: 0;
   padding: 0;
   height: 100vh;
-  background: linear-gradient(-45deg, #1a2a6c, #b21f1f, #fdbb2d, #0f9b0f);
+  background: linear-gradient(-45deg, #1a2a6c, #b21f1f, #17e9e0, #4b0082);
   background-size: 400% 400%;
-  animation: movimientoFondo 15s ease infinite;
+  animation: fondoAnimado 15s ease infinite;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   display: flex;
   justify-content: center;
@@ -12,19 +12,19 @@ body {
   text-align: center;
   color: white;
   flex-direction: column;
+  overflow: hidden;
 }
 
-@keyframes movimientoFondo {
+@keyframes fondoAnimado {
   0% { background-position: 0% 50%; }
   50% { background-position: 100% 50%; }
   100% { background-position: 0% 50%; }
 }
 
-/* Títulos centrados y destacados */
+/* Texto centrado */
 h1, h2 {
   margin: 10px 0;
-  font-weight: bold;
-  text-shadow: 2px 2px 4px #00000050;
+  text-shadow: 2px 2px 6px #000;
 }
 
 h1 {
@@ -35,7 +35,7 @@ h2 {
   font-size: 2em;
 }
 
-/* Botones iluminados con cambio de color */
+/* Botones iluminados con diferentes colores al hover */
 button {
   padding: 12px 25px;
   margin: 10px;
@@ -46,20 +46,33 @@ button {
   cursor: pointer;
   color: white;
   background: linear-gradient(90deg, #00c6ff, #0072ff);
-  box-shadow: 0 0 10px rgba(0,0,0,0.4);
+  box-shadow: 0 0 10px rgba(0,0,0,0.3);
   transition: all 0.4s ease;
 }
 
 button:hover {
   background: linear-gradient(90deg, 
-    hsl(calc(60 + 100 * var(--h, 1)), 80%, 50%),
-    hsl(calc(160 + 100 * var(--h, 1)), 80%, 50%)
+    #32CD32,     /* verde lima */
+    #8A2BE2,     /* morado */
+    #40E0D0      /* turquesa */
   );
   transform: scale(1.1);
-  box-shadow: 0 0 20px rgba(255,255,255,0.7);
+  box-shadow: 0 0 25px rgba(255,255,255,0.7);
 }
 
-/* Para aplicar colores aleatorios al hover si se desea */
-button:hover::after {
-  --h: calc(1 + (random(100) / 100));
+/* 🐍 Vibora animada en el login */
+.snake {
+  position: absolute;
+  top: -100px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 200px;
+  animation: snakeDown 2s ease-in-out forwards;
+  z-index: 10;
+}
+
+@keyframes snakeDown {
+  0% { top: -100px; opacity: 0; }
+  50% { opacity: 1; }
+  100% { top: 50px; }
 }
