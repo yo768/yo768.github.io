@@ -1,92 +1,65 @@
 body {
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+  background: linear-gradient(-45deg, #1a2a6c, #b21f1f, #fdbb2d, #0f9b0f);
+  background-size: 400% 400%;
+  animation: movimientoFondo 15s ease infinite;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  margin: 20px;
-  background: linear-gradient(to bottom right, #f4f4f4, #e0e0e0);
-  color: #333;
-  transition: all 0.3s ease-in-out;
-}
-
-/* Animación de fade */
-section {
-  background: white;
-  padding: 25px;
-  border-radius: 12px;
-  margin-bottom: 30px;
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
-  animation: fadeIn 0.8s ease-in-out;
-}
-
-@keyframes fadeIn {
-  from { opacity: 0; transform: translateY(20px); }
-  to { opacity: 1; transform: translateY(0); }
-}
-
-/* Menú animado con estilo flotante */
-nav {
   display: flex;
   justify-content: center;
-  flex-wrap: wrap;
-  margin-bottom: 30px;
-  gap: 12px;
-}
-
-nav button {
-  padding: 12px 20px;
-  font-size: 16px;
-  font-weight: bold;
-  cursor: pointer;
-  background: linear-gradient(145deg, #008cff, #005ecb);
+  align-items: center;
+  text-align: center;
   color: white;
-  border: none;
-  border-radius: 30px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-  transition: transform 0.2s ease, background 0.3s ease;
+  flex-direction: column;
 }
 
-nav button:hover {
-  background: linear-gradient(145deg, #006ee0, #003c9e);
-  transform: scale(1.05);
+@keyframes movimientoFondo {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
 }
 
-/* Texto destacado */
+/* Títulos centrados y destacados */
 h1, h2 {
-  font-family: 'Georgia', serif;
+  margin: 10px 0;
   font-weight: bold;
-  color: #222;
-  margin-bottom: 10px;
+  text-shadow: 2px 2px 4px #00000050;
 }
 
 h1 {
-  font-size: 2.5em;
-  text-align: center;
+  font-size: 3em;
 }
 
 h2 {
   font-size: 2em;
 }
 
-/* Galería en lista animada */
-.galeria {
-  display: flex;
-  flex-direction: column;
-  gap: 15px;
-  align-items: center;
-}
-
-.galeria img {
-  width: 80%;
-  max-width: 400px;
-  border: 3px solid #007bff;
-  border-radius: 12px;
-  transition: transform 0.3s ease;
-}
-
-.galeria img:hover {
-  transform: scale(1.03) rotate(1deg);
-}
-
-/* Login error */
-.error {
-  color: crimson;
+/* Botones iluminados con cambio de color */
+button {
+  padding: 12px 25px;
+  margin: 10px;
+  border: none;
+  border-radius: 30px;
+  font-size: 16px;
   font-weight: bold;
+  cursor: pointer;
+  color: white;
+  background: linear-gradient(90deg, #00c6ff, #0072ff);
+  box-shadow: 0 0 10px rgba(0,0,0,0.4);
+  transition: all 0.4s ease;
+}
+
+button:hover {
+  background: linear-gradient(90deg, 
+    hsl(calc(60 + 100 * var(--h, 1)), 80%, 50%),
+    hsl(calc(160 + 100 * var(--h, 1)), 80%, 50%)
+  );
+  transform: scale(1.1);
+  box-shadow: 0 0 20px rgba(255,255,255,0.7);
+}
+
+/* Para aplicar colores aleatorios al hover si se desea */
+button:hover::after {
+  --h: calc(1 + (random(100) / 100));
 }
