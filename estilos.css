@@ -1,3 +1,64 @@
+body {
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+  background: linear-gradient(-45deg, #1a2a6c, #b21f1f, #17e9e0, #4b0082);
+  background-size: 400% 400%;
+  animation: fondoAnimado 15s ease infinite;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  color: white;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+@keyframes fondoAnimado {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* Texto centrado */
+h1, h2 {
+  margin: 10px 0;
+  text-shadow: 2px 2px 6px #000;
+}
+
+h1 {
+  font-size: 3em;
+}
+
+h2 {
+  font-size: 2em;
+}
+
+/* Botones iluminados con diferentes colores al hover */
+button {
+  padding: 12px 25px;
+  margin: 10px;
+  border: none;
+  border-radius: 30px;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  color: white;
+  background: linear-gradient(90deg, #00c6ff, #0072ff);
+  box-shadow: 0 0 10px rgba(0,0,0,0.3);
+  transition: all 0.4s ease;
+}
+
+button:hover {
+  background: linear-gradient(90deg, 
+    #32CD32,     /* verde lima */
+    #8A2BE2,     /* morado */
+    #40E0D0      /* turquesa */
+  );
+  transform: scale(1.1);
+  box-shadow: 0 0 25px rgba(255,255,255,0.7);
+}
 
 .ball {
   position: absolute;
