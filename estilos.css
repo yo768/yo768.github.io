@@ -1,39 +1,92 @@
 body {
-  font-family: Arial, sans-serif;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   margin: 20px;
-  background-color: #f4f4f4;
+  background: linear-gradient(to bottom right, #f4f4f4, #e0e0e0);
+  color: #333;
+  transition: all 0.3s ease-in-out;
 }
 
+/* Animación de fade */
+section {
+  background: white;
+  padding: 25px;
+  border-radius: 12px;
+  margin-bottom: 30px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+  animation: fadeIn 0.8s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Menú animado con estilo flotante */
 nav {
-  margin-bottom: 20px;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-bottom: 30px;
+  gap: 12px;
 }
 
 nav button {
-  padding: 10px 15px;
-  margin-right: 5px;
+  padding: 12px 20px;
+  font-size: 16px;
+  font-weight: bold;
   cursor: pointer;
-  background-color: #007bff;
+  background: linear-gradient(145deg, #008cff, #005ecb);
   color: white;
   border: none;
-  border-radius: 5px;
+  border-radius: 30px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  transition: transform 0.2s ease, background 0.3s ease;
 }
 
 nav button:hover {
-  background-color: #0056b3;
+  background: linear-gradient(145deg, #006ee0, #003c9e);
+  transform: scale(1.05);
 }
 
-section {
-  background: white;
-  padding: 20px;
-  border-radius: 8px;
+/* Texto destacado */
+h1, h2 {
+  font-family: 'Georgia', serif;
+  font-weight: bold;
+  color: #222;
+  margin-bottom: 10px;
+}
+
+h1 {
+  font-size: 2.5em;
+  text-align: center;
+}
+
+h2 {
+  font-size: 2em;
+}
+
+/* Galería en lista animada */
+.galeria {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  align-items: center;
 }
 
 .galeria img {
-  margin: 5px;
-  border: 2px solid #ccc;
-  border-radius: 5px;
+  width: 80%;
+  max-width: 400px;
+  border: 3px solid #007bff;
+  border-radius: 12px;
+  transition: transform 0.3s ease;
 }
 
+.galeria img:hover {
+  transform: scale(1.03) rotate(1deg);
+}
+
+/* Login error */
 .error {
-  color: red;
+  color: crimson;
+  font-weight: bold;
 }
