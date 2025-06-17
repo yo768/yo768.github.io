@@ -1,142 +1,135 @@
-/* Reset general */
-* {
+/* Fondo con estilo retro-futurista */
+body {
   margin: 0;
   padding: 0;
-  box-sizing: border-box;
-}
-
-body {
-  font-family: 'Segoe UI', sans-serif;
-  background-color: #f2f2f2;
-  color: #333;
-  line-height: 1.6;
-  padding: 0 10px;
-}
-
-/* Navegación */
-nav {
-  background-color: #1f2c3a;
-  padding: 15px;
+  height: 100vh;
+  background: linear-gradient(120deg, #0f2027, #203a43, #2c5364);
+  background-size: cover;
+  animation: fondoNeon 20s ease infinite;
+  font-family: 'Courier New', Courier, monospace;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   text-align: center;
-  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  color: #e0f7fa;
+  flex-direction: column;
+  overflow: hidden;
 }
 
-nav button {
-  background-color: #3498db;
-  color: white;
-  border: none;
-  margin: 5px;
-  padding: 10px 20px;
-  font-size: 1rem;
-  border-radius: 5px;
-  cursor: pointer;
-  transition: background 0.3s ease;
+/* Fondo animado sutil */
+@keyframes fondoNeon {
+  0% { background-position: 0% 0%; }
+  50% { background-position: 100% 100%; }
+  100% { background-position: 0% 0%; }
 }
 
-nav button:hover {
-  background-color: #2980b9;
+/* Títulos con estilo pixelado/tech */
+h1, h2 {
+  margin: 10px 0;
+  color: #00ffe7;
+  text-shadow: 0 0 5px #00ffe7, 0 0 15px #00ffe7;
 }
 
-/* Secciones */
-section {
-  background-color: white;
-  margin: 20px auto;
-  padding: 20px;
-  border-radius: 10px;
-  max-width: 900px;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+h1 {
+  font-size: 2.5em;
+  letter-spacing: 2px;
 }
 
-section h1, section h2 {
-  color: #2c3e50;
-  margin-bottom: 10px;
+h2 {
+  font-size: 1.8em;
+  letter-spacing: 1px;
 }
 
-section p {
-  margin-bottom: 10px;
-}
-
-/* Imágenes */
-section img {
-  display: block;
-  margin: 10px auto;
+/* Botones estilo "terminal glow" */
+button {
+  padding: 12px 30px;
+  margin: 12px;
+  border: 2px solid #00ffe7;
   border-radius: 8px;
-  max-width: 100%;
-  height: auto;
-  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-}
-
-/* Login */
-#login input[type="text"],
-#login input[type="password"] {
-  width: 80%;
-  padding: 10px;
-  margin: 8px auto;
-  display: block;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-}
-
-#login button {
-  background-color: #2ecc71;
-  color: white;
-  border: none;
-  padding: 10px 20px;
-  margin-top: 10px;
-  border-radius: 5px;
-  cursor: pointer;
-}
-
-#login button:hover {
-  background-color: #27ae60;
-}
-
-.error {
-  color: red;
+  background-color: transparent;
+  color: #00ffe7;
+  font-size: 1rem;
   font-weight: bold;
-  text-align: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 0 5px #00ffe7, inset 0 0 10px rgba(0, 255, 255, 0.2);
 }
 
-/* Actividades */
-#actividades ul {
-  list-style-type: none;
-  padding: 0;
-  text-align: center;
-}
-
-#actividades img {
-  margin: 10px;
-  max-width: 22%;
-  border: 3px solid #ddd;
-  transition: transform 0.2s ease;
-}
-
-#actividades img:hover {
+button:hover {
+  background-color: #00ffe7;
+  color: #000;
+  box-shadow: 0 0 10px #00ffe7, 0 0 40px #00ffe7;
   transform: scale(1.05);
 }
 
-/* Video */
-#video iframe {
-  display: block;
-  margin: 20px auto;
-  max-width: 100%;
-  border-radius: 10px;
+/* Secciones más aireadas */
+section {
+  max-width: 800px;
+  background-color: rgba(0, 0, 0, 0.6);
+  padding: 30px;
+  margin: 20px;
+  border-radius: 12px;
+  box-shadow: 0 0 20px rgba(0, 255, 255, 0.3);
 }
 
-/* Responsive */
+/* Imágenes con marco neón */
+section img {
+  border-radius: 10px;
+  border: 2px solid #00ffe7;
+  box-shadow: 0 0 10px #00ffe7;
+  margin: 15px auto;
+  display: block;
+  max-width: 90%;
+}
+
+/* Inputs estilo terminal */
+input[type="text"], input[type="password"] {
+  width: 80%;
+  padding: 12px;
+  margin: 8px 0;
+  border-radius: 6px;
+  border: 1px solid #00ffe7;
+  background-color: #111;
+  color: #00ffe7;
+  font-family: monospace;
+  outline: none;
+}
+
+input:focus {
+  box-shadow: 0 0 8px #00ffe7;
+}
+
+/* Error en rojo neón */
+.error {
+  color: #ff4c4c;
+  font-weight: bold;
+  text-shadow: 0 0 5px #ff4c4c;
+}
+
+/* Video */
+iframe {
+  border: 3px solid #00ffe7;
+  border-radius: 10px;
+  box-shadow: 0 0 15px #00ffe7;
+  max-width: 100%;
+}
+
+/* Responsive base */
 @media (max-width: 768px) {
-  nav button {
-    display: block;
+  body {
+    padding: 10px;
+  }
+
+  button {
     width: 100%;
     margin: 8px 0;
   }
 
-  #login input[type="text"],
-  #login input[type="password"] {
+  input {
     width: 100%;
   }
 
-  #actividades img {
-    max-width: 100%;
+  section {
+    padding: 20px;
   }
 }
