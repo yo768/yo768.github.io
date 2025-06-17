@@ -1,4 +1,4 @@
-/* Reset básico */
+/* Reset general */
 * {
   margin: 0;
   padding: 0;
@@ -6,92 +6,137 @@
 }
 
 body {
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  line-height: 1.6;
-  background-color: #f4f4f4;
+  font-family: 'Segoe UI', sans-serif;
+  background-color: #f2f2f2;
   color: #333;
+  line-height: 1.6;
+  padding: 0 10px;
 }
 
-/* Contenedor */
-.container {
-  width: 90%;
-  max-width: 1200px;
-  margin: auto;
-}
-
-/* Header */
-header {
-  background-color: #35495e;
-  color: #fff;
-  padding: 20px 0;
-  text-align: center;
-}
-
-header h1 {
-  font-size: 2rem;
-}
-
-/* Navbar */
+/* Navegación */
 nav {
-  background-color: #2c3e50;
+  background-color: #1f2c3a;
+  padding: 15px;
+  text-align: center;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
 }
 
-nav ul {
-  list-style: none;
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-}
-
-nav li {
-  margin: 10px;
-}
-
-nav a {
+nav button {
+  background-color: #3498db;
   color: white;
-  text-decoration: none;
-  padding: 10px 15px;
-  display: block;
+  border: none;
+  margin: 5px;
+  padding: 10px 20px;
+  font-size: 1rem;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background 0.3s ease;
 }
 
-nav a:hover {
-  background-color: #1abc9c;
+nav button:hover {
+  background-color: #2980b9;
+}
+
+/* Secciones */
+section {
+  background-color: white;
+  margin: 20px auto;
+  padding: 20px;
+  border-radius: 10px;
+  max-width: 900px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+}
+
+section h1, section h2 {
+  color: #2c3e50;
+  margin-bottom: 10px;
+}
+
+section p {
+  margin-bottom: 10px;
+}
+
+/* Imágenes */
+section img {
+  display: block;
+  margin: 10px auto;
+  border-radius: 8px;
+  max-width: 100%;
+  height: auto;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+/* Login */
+#login input[type="text"],
+#login input[type="password"] {
+  width: 80%;
+  padding: 10px;
+  margin: 8px auto;
+  display: block;
+  border: 1px solid #ccc;
   border-radius: 5px;
 }
 
-/* Main */
-main {
-  background: white;
-  padding: 20px;
-  margin: 20px 0;
-  border-radius: 8px;
-  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+#login button {
+  background-color: #2ecc71;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  margin-top: 10px;
+  border-radius: 5px;
+  cursor: pointer;
 }
 
-/* Sidebar (opcional) */
-.sidebar {
-  background: #ecf0f1;
-  padding: 15px;
-  margin-top: 20px;
-  border-radius: 8px;
+#login button:hover {
+  background-color: #27ae60;
 }
 
-/* Footer */
-footer {
-  background-color: #2c3e50;
-  color: #fff;
+.error {
+  color: red;
+  font-weight: bold;
   text-align: center;
-  padding: 20px 0;
-  margin-top: 20px;
+}
+
+/* Actividades */
+#actividades ul {
+  list-style-type: none;
+  padding: 0;
+  text-align: center;
+}
+
+#actividades img {
+  margin: 10px;
+  max-width: 22%;
+  border: 3px solid #ddd;
+  transition: transform 0.2s ease;
+}
+
+#actividades img:hover {
+  transform: scale(1.05);
+}
+
+/* Video */
+#video iframe {
+  display: block;
+  margin: 20px auto;
+  max-width: 100%;
+  border-radius: 10px;
 }
 
 /* Responsive */
 @media (max-width: 768px) {
-  nav ul {
-    flex-direction: column;
+  nav button {
+    display: block;
+    width: 100%;
+    margin: 8px 0;
   }
 
-  .container {
-    width: 95%;
+  #login input[type="text"],
+  #login input[type="password"] {
+    width: 100%;
+  }
+
+  #actividades img {
+    max-width: 100%;
   }
 }
