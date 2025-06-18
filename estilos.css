@@ -23,6 +23,15 @@ body {
   padding: 10px;
 }
 
+}
+#actividades PEC {
+  display: none; /* Puedes cambiar esto a block cuando quieras mostrarlo */
+  height: 700px; /* Altura que se podrá hacer scroll si el contenido excede */
+  overflow-y: auto; /* Scroll vertical */
+  border: 1px solid #ccc; /* Opcional, para visualizar el borde */
+  padding: 10px;
+}
+
 /* Fondo animado sutil */
 @keyframes fondoNeon {
   0% { background-position: 0% 0%; }
