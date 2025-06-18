@@ -24,7 +24,7 @@ body {
 }
 
 }
-#actividades PEC {
+#actividades {
   display: none; /* Puedes cambiar esto a block cuando quieras mostrarlo */
   height: 700px; /* Altura que se podrá hacer scroll si el contenido excede */
   overflow-y: auto; /* Scroll vertical */
